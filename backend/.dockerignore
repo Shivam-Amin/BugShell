@@ -1,0 +1,40 @@
+# Node.js dependency directories
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# Logs
+logs/
+*.log
+
+# Environment variables
+.env
+.env.*
+
+# Local development files
+.DS_Store
+*.local
+
+# Test files
+__tests__/
+coverage/
+*.test.js
+*.spec.js
+*.test.ts
+*.spec.ts
+
+# Build output (if any)
+dist/
+build/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Docker files
+Dockerfile*
+docker-compose.yml
+
+# Git
+.git/
+.gitignore

@@ -1,0 +1,41 @@
+.input_container {
+    display: flex;
+    /* align-items: row; */
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: inherit;
+    font-weight: 600;
+}
+
+.input_container span {
+    color: #385526;
+    margin-right: 7px;
+    font-size: inherit;
+}
+
+.input_container input {
+    width: 100%;
+    background: none;
+    padding: 0 0 4px 7px;
+
+    color: #377E22;
+    font-size: inherit;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    font-family: Ubuntu Mono, monospace, sans-serif;
+
+
+    border: none;
+    border-bottom: 1px solid #377E22;
+    outline: none;
+}
+
+.input_container input:is(:focus, .filled) {
+    border-color: #53BF53;
+}
+
+
+input::placeholder {
+    color: #377E22;
+    font-weight: 400;
+}

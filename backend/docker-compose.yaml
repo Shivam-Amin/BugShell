@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  server:
+    build:
+      context: .
+      platforms:
+        # - "linux/arm64" 
+        - "linux/amd64"
+    environment:
+      PORT: 5000
+      FRONTEND_URL: ${FRONTEND_URL}
+      MYSQL_URL: ${MYSQL_URL_DOCKER}
+      JWT_SECRET: ${JWT_SECRET}
+      NODE_ENV: production
+    ports:
+      - 5000:5000

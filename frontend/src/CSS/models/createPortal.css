@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* font-family: sans-serif; */
+}
+  
+body {
+  /* margin: 0; */
+  width: 100%;
+  height: 100%;
+}
+
+.model {
+  width: 100%;
+  font-family: Ubuntu Mono, monospace, sans-serif;
+}
+
+.model > * > .title {
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+}
+
+.model > * > .title .svg {
+  cursor: pointer;
+
+  width: 26.4px;
+  height: 26.4px;
+  padding: 2px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8C8C8C;
+}
+
+.model > * > .main {
+  font-size: 18px;
+}
