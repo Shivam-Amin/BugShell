@@ -1,0 +1,26 @@
+.button_container button {
+    cursor: pointer;
+    /* font-size: 1.2rem; */
+    width: 100%;
+    font-weight: bold;
+    color: #377E22;
+    font-family: Ubuntu Mono, monospace, sans-serif;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 17px;
+    gap: 10px;
+    
+    background: none;
+    outline: none;
+    border: none;
+    border: 1px solid #377E22;
+    transition: 0.15s  ease-out;
+}
+
+.button_container button:is(:hover, :active, :focus-visible) {
+    border-color: #53BF53;
+    background-color: #377E22;
+    color: #1A1A1A;
+}

@@ -1,0 +1,13 @@
+.p_container {
+    position: relative;
+    font-size: 1.1rem;
+    color: #FFF;
+}
+
+.p_container > p {
+    font-weight: bold;
+}
+
+.p_container span {
+    color: #8C8C8C;
+}

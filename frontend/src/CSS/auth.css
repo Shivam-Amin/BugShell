@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-color: #1A1A1A;
+    font-family: Ubuntu Mono, monospace, sans-serif;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* padding-top: 5rem; */
+}
+
+.sub_container {
+    position: relative;
+    width: 286px;
+    /* height: 500px; */
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5rem;
+}
+
+.sub_container > form {
+    width: 100%;
+    font-size: 18px;
+}
+
+h1 {
+    font-size: 42px;
+    color: #FFF;
+    margin-bottom: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 span {
+    color: #377E22;
+}
+
+.btn_container,
+.btn_containe__github {
+    width: 100%;
+    margin-top: 30px;
+    
+    display: flex;
+    justify-content: right;
+}
+
+/* .btn_container button,
+.btn_containe__github button {
+    cursor: pointer;
+    font-size: 16px;
+    color: #377E22;
+    font-family: Ubuntu Mono, monospace, sans-serif;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 17px;
+    gap: 10px;
+    
+    background: none;
+    outline: none;
+    border: none;
+    border: 1px solid #377E22;
+    transition: 0.15s  ease-out;
+} */
+
+
+
+/* .btn_container .svg,
+.btn_containe__github .svg {
+    width: 12px;
+    height: 12px;
+}
+
+.btn_container button:is(:hover, :active, :focus-visible),
+.btn_containe__github:is(:hover, :active, :focus-visible) {
+    border-color: #53BF53;
+    background-color: #377E22;
+    color: #1A1A1A;
+} */
+
+.btn_containe__github img {
+    aspect-ratio: 1;
+    width: 20px;
+    border-radius: 0.6vw;
+}
+
+/* .btn_container button:is(:hover, :active, :focus-visible) > .svg {
+    padding-left: 5px;
+} */
+
+.auth_change_container {
+    width: 100%;
+    display: flex;
+    justify-content: right;
+}
+
+.auth_change_container a {
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+    color: #FFF;
+    background-color: #1A1A1A;
+}
+
+
+.auth_change_container a span {
+    color: #8C8C8C;
+}
+
+
+.seperate_container {
+    position: relative;
+    width: 100%;
+    height: 2px;
+    background-color: #8C8C8C;
+    margin-top: 55px;
+    margin-bottom: 10px;
+}
+
+.seperate_container p {
+    position: absolute;
+    top: -10px;
+    left: 38%;
+
+    background-color: #1A1A1A;
+    padding: 0 8px;
+}

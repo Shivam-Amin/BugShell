@@ -1,0 +1,233 @@
+.selected_shell {
+    width: 100vw;
+    height: 100vh;
+    background-color: #1A1A1A;
+    color: #FFF;
+    font-family: Ubuntu Mono, monospace, sans-serif;
+    padding: 1.2rem 1.5rem;
+
+    /* display: flex;
+    align-items: center;
+    flex-direction: column; */
+    /* padding-top: 5rem; */
+}
+
+.selected_shell .header {
+    justify-content: space-between;
+}
+
+.selected_shell .header,
+.selected_shell .header .user_info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.selected_shell .header .user_info {
+    gap: 0.8rem;
+}
+
+.selected_shell .header .menu {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    cursor: pointer;
+}
+
+.selected_shell .header .menu:is(:hover, :focus) {
+    cursor: pointer;
+}
+
+/* .selected_shell .header p {
+    font-size: 1.2rem;
+} */
+
+.selected_shell .user_logo {
+    aspect-ratio: 1;
+    width: 2rem;
+    border-radius: 50%;
+}
+
+
+
+
+/* main-------------------- */
+
+.selected_shell .main {
+    margin-top: 2rem;
+    width: 100%;
+    height: calc(100% - 80px);
+    /* height: 100%; */
+    /* background-color: #303030b6; */
+    border-radius: 10px 10px 0 0;
+}
+
+.selected_shell .main > .tabs {
+    width: 100%;
+    /* height: 20px; */
+    
+    font-size: 15px;
+    font-weight: bold;
+
+    display: flex;
+    flex-direction: row;
+    /* flex-wrap: nowrap; */
+    align-items: center;
+    justify-self: center;
+    
+    overflow-x: scroll;
+    /* overflow-x: hidden; */
+
+
+    /* padding: 8px; */
+    /* background-color: #303030b6; */
+    /* border-radius: 10px 10px 0 0; */
+}
+
+.selected_shell .main > .tabs::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+  }
+
+.selected_shell .main > .tabs  div.tab {
+    padding: 8px 12px;
+    background-color: #303030b6;
+    border-radius: 10px 10px 0 0;
+}
+
+.selected_shell .main > .tabs  div.tab:is(:hover),
+.selected_shell .main > .tabs  div.tab:is(:hover) >label {
+    cursor: pointer;
+}
+
+.selected_shell .main > .tabs  div.tab button {
+    position: absolute;
+    left: -10000px;
+}
+
+.selected_shell .main > .tabs > div.add_tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    width: 28px;
+    height: 28px;
+    
+    margin-left: 10px;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.selected_shell .main > .tabs > div.add_tab:is(:hover, :focus) {
+    cursor: pointer;
+    background-color: #303030;
+}
+
+.selected_shell .main > .term_container {
+    padding: 1rem;
+    width: calc(100% - 50px);
+    width: 100%;
+    height: calc(100% - 50px);
+    /* height: 100%; */
+    background-color: #303030b6;
+    border-radius: 0 10px 10px 10px;
+}
+
+
+.main > .btn_main {
+    width: max-content;
+}
+
+.btn_main button {
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #377E22;
+    font-family: Ubuntu Mono, monospace, sans-serif;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 17px;
+    gap: 10px;
+    
+    background: none;
+    outline: none;
+    border: none;
+    border: 1px solid #377E22;
+    transition: 0.15s  ease-out;
+}
+
+.btn_main button:is(:hover, :active, :focus-visible) {
+    border-color: #53BF53;
+    background-color: #377E22;
+    color: #1A1A1A;
+}
+
+.main > .title {
+    margin-top: 2rem;
+}
+
+.main > .title .title_name {
+    font-size: 2rem;
+    color: #FFF;
+}
+
+.main > .title .title_name span {
+    font-weight: bold;
+    color: #377E22;
+}
+
+.main > .shells {
+    min-height: 50px;
+    margin-top: 1rem;
+    padding: 10px;
+}
+
+.main > .shells .shells_header,
+.main > .shells .shell {
+    border-radius: 10px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) 0.1fr;
+}
+
+.main > .shells .shells_header {
+    padding: 0 10px;
+    border-bottom: 0.8px solid #8C8C8C;
+}
+
+.main > .shells .shell {
+    cursor: pointer;
+
+    padding: 0.8rem 10px;
+    margin-top: 2px;
+
+    border-bottom: 0.8px solid #377E22;
+}
+
+.main > .shells .shell:is(:hover, :focus) {
+    background: #2e2e2e;
+}
+
+.main > .shells .shell p {
+    font-size: 1.1rem;
+}
+
+
+
+.quick_tips {
+    display: block;
+    position: absolute;
+    width: 500px;
+
+    padding: 12px;
+    border-radius: 10px;
+    background-color: #323232;
+
+    top: 3rem;
+    left: -25rem;
+
+    z-index: 100;
+
+}
