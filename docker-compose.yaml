@@ -1,24 +1,37 @@
 version: '3.8'
 
 services:
-  
-  server:
+
+  frontend:
     build:
-      context: .
+      context: ./frontend
+    container_name: frontend
+    ports:
+      - 5173:5173  
+    depends_on:
+      - backend
+    networks:
+      - app-network
+  
+  backend:
+    build:
+      context: ./backend
       platforms:
         - "linux/arm64" 
         # - "linux/amd64"
     environment:
       PORT: 5000
-      FRONTEND_URL: ${FRONTEND_URL}
-      MYSQL_URL: ${MYSQL_URL_DOCKER}
+      FRONTEND_URL: 'http://localhost:5173'
       JWT_SECRET: ${JWT_SECRET}
+      MYSQL_URL_DOCKER: ${MYSQL_URL_DOCKER}
       NODE_ENV: production
     ports:
       - 5000:5000
     depends_on:
       mysql:
         condition: service_healthy
+    networks:
+      - app-network
 
   mysql:
     image: mysql
@@ -36,3 +49,9 @@ services:
       timeout: 5s
       retries: 5
     restart: always
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

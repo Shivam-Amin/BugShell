@@ -18,30 +18,18 @@ export { Context, server }
 
 const AppWrapper = ({children}) => {
   const [loading, setLoading] = useState(false)
-  const [user, setUser] = useState({})
-  const [isAuth, setIsAuth] = useState(false)
-  const [isRegisted, setIsRegisted] = useState(false)
+  // const [user, setUser] = useState({})
+  // const [isAuth, setIsAuth] = useState(false)
+  // const [isRegisted, setIsRegisted] = useState(false)
 
-  const initialAuthUser = localStorage.getItem("cookie");
-  const [gitUser, setGitUser] = useState({});
+  // const initialAuthUser = localStorage.getItem("cookie");
+  // const [gitUser, setGitUser] = useState({});
 
   const [contextMenu, setContextMenu] = useState({
     visible: false,
     x: 0,
     y: 0
   });
-
-  const ctxValue =  {
-    loading: loading,
-    setLoading: setLoading,
-    user: user,
-    setUser: setUser,
-    isAuth: isAuth,
-    setIsAuth: setIsAuth,
-    gitUser: gitUser,
-    setGitUser: setGitUser
-  }
-  // print ctxValue
   
   useEffect(() => {
     axios.get(`${server}/users/me`, {
@@ -64,14 +52,14 @@ const AppWrapper = ({children}) => {
       value={{
         loading: loading,
         setLoading: setLoading,
-        user: user,
-        setUser: setUser,
-        isAuth: isAuth,
-        setIsAuth: setIsAuth,
-        isRegisted: isRegisted,
-        setIsRegisted: setIsRegisted,
-        gitUser: gitUser,
-        setGitUser: setGitUser,
+        // user: user,
+        // setUser: setUser,
+        // isAuth: isAuth,
+        // setIsAuth: setIsAuth,
+        // isRegisted: isRegisted,
+        // setIsRegisted: setIsRegisted,
+        // gitUser: gitUser,
+        // setGitUser: setGitUser,
         contextMenu, setContextMenu,
       }}>
         {children}

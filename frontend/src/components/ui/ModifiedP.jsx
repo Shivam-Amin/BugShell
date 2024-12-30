@@ -1,4 +1,4 @@
-import '../../CSS/ui/ModifiedP.css';
+import '../../CSS/ui/modifiedP.css';
 
 const ModifiedP = (props) => {
 

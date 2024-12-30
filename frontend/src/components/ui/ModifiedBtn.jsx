@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../CSS/ui/ModifiedBtn.css';
+import '../../CSS/ui/modifiedBtn.css';
 
 
 const ModifiedBtn = (props) => {

@@ -9,7 +9,7 @@ config({
 })
 
 
-const sequelize = new Sequelize(process.env.MYSQL_URL, {
+const sequelize = new Sequelize(process.env.MYSQL_URL_DOCKER, {
   logging: false
 });
 
