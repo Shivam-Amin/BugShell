@@ -1,6 +1,6 @@
 import React from "react";
 import ReactLoading from "react-loading";
-import '../css/loading.css'
+import '../CSS/loading.css'
 
 const Loading = ({clr, children}) => {
   // const {loading} = useContext(Context)

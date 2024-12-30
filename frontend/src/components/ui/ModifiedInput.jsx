@@ -1,4 +1,4 @@
-import '../../CSS/ui/ModifiedInput.css';
+import '../../CSS/ui/modifiedInput.css';
 
 
 const ModifiedInput = (props) => {

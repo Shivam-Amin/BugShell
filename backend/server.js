@@ -103,8 +103,8 @@ const start = async () => {
       );
 
       socket.on("shell:input", ({ command, id, initialDirectory }) => {
-        log("cmd:::", id);
-        log("cmd:::", String(command));
+        // log("cmd:::", id);
+        // log("cmd:::", String(command));
         const session = sessionManager.getSession(id);
         if (session) {
           // console.log('in session', command);

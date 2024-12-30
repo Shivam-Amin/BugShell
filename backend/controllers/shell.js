@@ -9,10 +9,12 @@ import { exec } from 'child_process'
 import { sessionManager } from '../utils/sessionManager.js';
 import { log } from 'console';
 
-export const CreateSession = async (req, res, next) => {
+let username = 'BugShell'
+
+export const CreateShell = async (req, res, next) => {
   try {
     let name = req.body.name.trim();
-    const { username } = req.user;
+    // const { username } = req.user;
 
     if (name == "") {
       return next(new ErrorHandler("Shell-Name already exist...", 404));
@@ -23,7 +25,8 @@ export const CreateSession = async (req, res, next) => {
       where: { 
         folder_name: name, 
         username: username
-      }});
+      }
+    });
 
   
     if (folder) {
@@ -62,10 +65,11 @@ export const CreateSession = async (req, res, next) => {
     next(error);
   }
 }
-export const DeleteSession = async (req, res, next) => {
+
+export const DeleteShell = async (req, res, next) => {
   try {
     const { id, name }  = req.body;
-    const { username } = req.user;
+    // const { username } = req.user;
 
     if (!id || name == "") {
       return next(new ErrorHandler("Shell doesn't exist...", 404));
@@ -114,10 +118,10 @@ export const DeleteSession = async (req, res, next) => {
 }
 
 
-export const  OpenShellSession = async (req, res, next) => {
+export const  OpenShell = async (req, res, next) => {
   try {
     const { name, id } = req.params;
-    const { username } = req.user;
+    // const { username } = req.user;
     console.log(name, id);
     
     // change directory to folder if it exists
@@ -155,7 +159,7 @@ export const  OpenShellSession = async (req, res, next) => {
 
 export const getShells = async (req, res, next) => {
   try {
-    let { username } = req.user;
+    // let { username } = req.user;
     
     // const { token } = req.cookies;
 
@@ -169,6 +173,30 @@ export const getShells = async (req, res, next) => {
         ['createdAt', 'DESC']
       ]
     });
+
+    // Execute the script to fetch folders
+    // exec('bash ./scripts/get_shells.sh', (error, stdout, stderr) => {
+    //   // if (error) {
+    //   //   console.error('Error:', error.message);
+    //   //   return next(new ErrorHandler('Failed to fetch shell folders!', 500));
+    //   // }
+
+    //   // if (stderr) {
+    //   //   console.error('Stderr:', stderr);
+    //   //   return next(new ErrorHandler('Failed to fetch shell folders!', 500));
+    //   // }
+    //   console.log(`EError: `)
+    //   console.log(stdout, stderr)
+
+
+    //   // Parse the folder names into an array
+    //   const shells = stdout.trim().split('\n').filter(Boolean);
+    //   console.log(shells)
+    //   return res.status(200).json({
+    //     success: true,
+    //     shells,
+    //   });
+    // });
     
     res.status(201).json({
       success: true,
@@ -182,7 +210,7 @@ export const getShells = async (req, res, next) => {
 export const CheckTools = async (req, res, next) => {
   try {
     // let name = req.body.name.trim();
-    const { username } = req.user;
+    // const { username } = req.user;
 
     log("in tools...")
     if (username) {

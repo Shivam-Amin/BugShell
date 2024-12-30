@@ -28,7 +28,7 @@ class Session {
   }
 
   write(message) {   
-    console.log(`PTY writting ${message}`);
+    // console.log(`PTY writting ${message}`);
      
     this.ptyProcess.write(message);
   }

@@ -13,13 +13,13 @@ import Loading from './components/Loading.jsx';
 
 function App() {
 
-  const {
-    isAuth, setIsAuth, 
-    isRegisted, setIsRegisted,
-    user, setUser, 
-    gitUser, setGitUser } = useContext(Context);
+  // const {
+  //   isAuth, setIsAuth, 
+  //   isRegisted, setIsRegisted,
+  //   user, setUser, 
+  //   gitUser, setGitUser } = useContext(Context);
   const [loading, setLoading] = useState(true)
-  const [authenticated, setAuthenticated] = useState(false);
+  // const [authenticated, setAuthenticated] = useState(true);
 
 
   useEffect(() => {
@@ -27,18 +27,20 @@ function App() {
       withCredentials: true,
     })
     .then(async (res) => {
-      setUser(res.data.user);
-      setIsAuth(true)
-      setIsRegisted(true)
+      // setUser(res.data.user);
+      // setIsAuth(true)
+      // setIsRegisted(true)
       setLoading(true)
-      setAuthenticated(true)
+      // setAuthenticated(true)
       
     })
     .catch((error) => {
-      setUser({});
-      setIsAuth(false)
-      setIsRegisted(false)
-      setAuthenticated(false)
+      // setUser({});
+      // setIsAuth(false)
+      // setIsRegisted(false)
+      // setAuthenticated(false)
+      console.log(error);
+      
     }).finally(() => {
       setLoading(false);
     });
@@ -52,12 +54,15 @@ function App() {
     // <div className='App'>
         <Router>
           <Routes>
-            <Route path="/" element={
+            {/* <Route path="/" element={
               isAuth ? <Home /> : <Navigate to='/login' /> } />
             <Route path="/shells" element={
-              isAuth ? <SelectedShell /> : <Navigate to='/login' /> } />
+              isAuth ? <SelectedShell /> : <Navigate to='/login' /> } /> */}
+            
+            <Route path="/" element={<Home />} />
+            <Route path="/shells" element={<SelectedShell />} />
 
-            <Route path="/signup" element={
+            {/* <Route path="/signup" element={
               isAuth ? ( <Navigate to='/' /> ) 
                 : (
                 isRegisted ? ( <Navigate to='/login' />) 
@@ -66,7 +71,7 @@ function App() {
             } />
             <Route path="/login" element={
               isAuth ? <Navigate to='/' /> : <Login />
-            } />
+            } /> */}
           </Routes>
 
 

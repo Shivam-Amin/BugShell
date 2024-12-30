@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
-import { Context } from '../main';
-import '../css/ContextMenu.css'
-import { HomeContext } from './Home';
-import ModifiedP from './ui/ModifiedP';
+import { Context } from '../main.jsx';
+import '../CSS/ContextMenu.css'
+import { HomeContext } from './Home.jsx';
+import ModifiedP from './ui/ModifiedP.jsx';
 
 const ContextMenu = ({ x, y, visible, onItemClick }) => {
   const { setHomeLoading, contextMenu, setContextMenu } = useContext(Context)

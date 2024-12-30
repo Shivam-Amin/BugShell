@@ -10,12 +10,12 @@ import default_user_logo from '../assets/default_user_logo.jpg';
 import '../CSS/home.css';
 // import './../CSS/xterm.css';
 import 'xterm/css/xterm.css'
-import ModifiedP from './ui/ModifiedP';
+import ModifiedP from './ui/ModifiedP.jsx';
 import toast from 'react-hot-toast';
-import Loading from './Loading';
-import ContextMenu from './ContextMenu';
-import CreateFolderModel from './Models/CreateFolderModel';
-import ModifiedBtn from './ui/ModifiedBtn';
+import Loading from './Loading.jsx';
+import ContextMenu from './ContextMenu.jsx';
+import CreateFolderModel from './models/CreateFolderModel.jsx';
+import ModifiedBtn from './ui/ModifiedBtn.jsx';
 import { Link, useLocation } from 'react-router-dom';
 import { TiFolderDelete } from "react-icons/ti";
 
@@ -27,15 +27,15 @@ export const HomeContext = createContext({});
 
 const Home = () => {
   const {
-    isAuth, setIsAuth, 
-    user, setUser, 
+    // isAuth, setIsAuth, 
+    // user, setUser, 
     loading, setLoading,
-    gitUser, setGitUser,
+    // gitUser, setGitUser,
     contextMenu, setContextMenu } = useContext(Context);
   
   const [homeLoading, setHomeLoading] = useState(false)
   const [shells, setShells] = useState([])
-  const [authenticated, setAuthenticated] = useState(false);
+  // const [authenticated, setAuthenticated] = useState(false);
   const [createFolderOption, setCreateFolderOption] = useState(false);
   const [toolsSetupDone, setToolsSetupDone] = useState(() => {
     const toolInfo = sessionStorage.getItem('toolSetup');
@@ -100,8 +100,8 @@ const Home = () => {
   }
 
   useEffect(() => {
-    // setToolsSetupDone(false);
-    if (!toolsSetupDone && isAuth) {
+    // if (!toolsSetupDone && isAuth) {
+    if (!toolsSetupDone) {
       console.log('setuping tools...');
       setupTools();
     }
@@ -118,6 +118,8 @@ const Home = () => {
         }
       })
       const sh = data.shells;
+      // console.log(sh);
+      
 
       await setShells(sh)
     }
@@ -127,6 +129,7 @@ const Home = () => {
   }, [homeLoading]);
 
 
+  // removed the login functionality but keeping it here for now.
   const handleLogoutClick = async () => {
     try {
       const { data } = await axios.get(`${server}/users/logout`, {
@@ -264,12 +267,12 @@ const Home = () => {
   }
 
 
-  if (!isAuth) {
-    // return <div>
-    //   <p>Loading...</p>
-    // </div>
-    return <Loading />
-  }
+  // if (!isAuth) {
+  //   // return <div>
+  //   //   <p>Loading...</p>
+  //   // </div>
+  //   return <Loading />
+  // }
 
 
   return (
@@ -291,13 +294,16 @@ const Home = () => {
           
           <div className="header">
             <div className="user_info">
-              <img className='user_logo' src={default_user_logo} alt="sjdklj" />
-              <ModifiedP text={user? user.username : gitUser} />
+              <img className='user_logo' src={default_user_logo} alt="profile pic" />
+              {/* <ModifiedP text={user ? user : gitUser} /> */}
+              <ModifiedP text={'BugShell'} />
             </div>
 
 
-            <div className="menu menu_logout" onClick={handleLogoutClick}>
-              <ModifiedP span_text = "$cd /" text = "logout" />
+            <div className="menu menu_logout" 
+              // onClick={handleLogoutClick} 
+              >
+              <ModifiedP span_text = "$cd /" text = "feat/Working" />
             </div>
           </div>
 
@@ -343,6 +349,7 @@ const Home = () => {
                 (shells.length !== 0)
                   ? ( <>
                         { shells.map((shell) => {
+                          
                           const createdAtDate = new Date(shell.updatedAt);
                           // Format date and time
                           const formattedDate = createdAtDate.toLocaleDateString('en-GB', {

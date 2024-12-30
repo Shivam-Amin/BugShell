@@ -18,16 +18,16 @@ import { MdAdd } from "react-icons/md";
 const EndPoint = "http://localhost:5000";
 
 const SelectedShell = () => {
-  const {
-    isAuth,
-    setIsAuth,
-    user,
-    gitUser,
-  } = useContext(Context);
+  // const {
+  //   isAuth,
+  //   setIsAuth,
+  //   user,
+  //   gitUser,
+  // } = useContext(Context);
 
   const [socket, setSocket] = useState(null);
   const [terminalReset, setTerminalReset] = useState(false);
-  const [loading, setLoading] = useState(isAuth ? false : true);
+  const [loading, setLoading] = useState(false);
   const [help, setHelp] = useState(false);
   const [terminal, setTerminal] = useState(null);
 
@@ -239,24 +239,12 @@ const SelectedShell = () => {
   }, [terminal, socket]);
 
   function writeIcon(t) {
-    t.writeln(
-      "\x1b[1;38;5;28m__________              \x1b[0m\x1b[1;38;5;55m_________.__           .__  .__   \x1b[0m",
-    );
-    t.writeln(
-      "\x1b[1;38;5;28m\\______   \\__ __  ____\x1b[0m\x1b[1;38;5;55m /   _____/|  |__   ____ |  | |  |  \x1b[0m",
-    );
-    t.writeln(
-      "\x1b[1;38;5;28m |    |  _/  |  \\/ ___\\\x1b[0m\x1b[1;38;5;55m\\_____  \\ |  |  \\_/ __ \\|  | |  |  \x1b[0m",
-    );
-    t.writeln(
-      "\x1b[1;38;5;28m |    |   \\  |  / /_/  >\x1b[0m\x1b[1;38;5;55m        \\|   Y  \\  ___/|  |_|  |__\x1b[0m",
-    );
-    t.writeln(
-      "\x1b[1;38;5;28m |______  /____/\\___  \x1b[0m\x1b[1;38;5;55m/_______  /|___|  /\\___  >____/____/\x1b[0m",
-    );
-    t.writeln(
-      "\x1b[1;38;5;28m        \\/     /_____/\x1b[0m\x1b[1;38;5;55m        \\/      \\/     \\/           \x1b[0m",
-    );
+    t.writeln("\x1b[1;38;5;28m__________              \x1b[0m\x1b[1;38;5;55m_________.__           .__  .__   \x1b[0m",);
+    t.writeln("\x1b[1;38;5;28m\\______   \\__ __  ____\x1b[0m\x1b[1;38;5;55m /   _____/|  |__   ____ |  | |  |  \x1b[0m",);
+    t.writeln("\x1b[1;38;5;28m |    |  _/  |  \\/ ___\\\x1b[0m\x1b[1;38;5;55m\\_____  \\ |  |  \\_/ __ \\|  | |  |  \x1b[0m",);
+    t.writeln("\x1b[1;38;5;28m |    |   \\  |  / /_/  >\x1b[0m\x1b[1;38;5;55m        \\|   Y  \\  ___/|  |_|  |__\x1b[0m",);
+    t.writeln("\x1b[1;38;5;28m |______  /____/\\___  \x1b[0m\x1b[1;38;5;55m/_______  /|___|  /\\___  >____/____/\x1b[0m",);
+    t.writeln("\x1b[1;38;5;28m        \\/     /_____/\x1b[0m\x1b[1;38;5;55m        \\/      \\/     \\/           \x1b[0m",);
     t.writeln("");
   }
 
@@ -309,7 +297,8 @@ const SelectedShell = () => {
       <div className="header">
         <div className="user_info">
           <img className="user_logo" src={default_user_logo} alt="sjdklj" />
-          <ModifiedP text={user ? user.username : gitUser} />
+          {/* <ModifiedP text={user ? user : gitUser} /> */}
+          <ModifiedP text={'BugShell'} />
         </div>
 
         <div className="menu menu_logout">
@@ -346,11 +335,11 @@ const SelectedShell = () => {
               ))}
             </div>
           </ModifiedP>
-          <ModifiedP
+          {/* <ModifiedP
             span_text="$cd /"
             text="logout"
             onclick={handleLogoutClick}
-          />
+          /> */}
         </div>
       </div>
 
