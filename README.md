@@ -1,6 +1,6 @@
 # BugShell  
 
-**BugShell** is a web-based terminal project built specifically for bug bounty hunters. It provides  CLI interface where users can **run  bug bounty cli-tools** and easily extend functionality by adding their own scripts. The project leverages Docker to ensure seamless setup.
+**BugShell** is a localhost tool, a web-based terminal project built specifically for bug bounty hunters. It provides  CLI interface where users can **run  bug bounty cli-tools** and easily extend functionality by adding their own scripts. The project leverages Docker to ensure seamless setup.
 
 ## **✨** Features  
 - **🖥️ Web-based Terminal**: A browser-accessible terminal interface using **`xterm.js`**.  
