@@ -42,7 +42,7 @@ Make sure you have installed:
 	This will pull all necessary images, set up containers, and run the project.
 	**Note: For the first time, it may take 1-2 min. to setup.**
 	
-4. Add **`.env`** file in the root of the folder project, you need to set below variables:
+4. Add **`.env`** file in the root directory of your project folder, you need to set below variables:
 	```bash
 	JWT_SECRET='any-string'
 	MYSQL_ROOT_PASSWORD='password'
