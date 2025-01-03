@@ -55,6 +55,8 @@ Make sure you have installed:
 	
 5. As per your system, also change the platform in **`./docker-compose.yaml`** file.
 
+   _**i.e.** linux/arm64_ or _linux/amd64_
+
 6. 🌐 The project should now be up and running on below url:
 	```link
 	http://localhost:5173
