@@ -27,16 +27,6 @@ RUN apt-get update && apt-get install -y python3 python3-pip python3-venv \
 ENV GOPATH=/root/go
 ENV PATH=$GOPATH/bin:$PATH
 
-# Install bug bounty tools
-RUN go install github.com/tomnomnom/httprobe@latest \
-    && ln -s /root/go/bin/httprobe /usr/local/bin/httprobe
-
-RUN git clone --depth 1 https://github.com/s0md3v/XSStrike.git /opt/xsstrike \
-    && python3 -m venv /opt/xsstrike/venv \
-    && /opt/xsstrike/venv/bin/pip install -r /opt/xsstrike/requirements.txt \
-    && ln -s /opt/xsstrike/xsstrike.py /usr/local/bin/xsstrike \
-    && chmod +x /usr/local/bin/xsstrike
-
 
 # Install Neovim
 RUN curl -LO https://github.com/neovim/neovim/releases/download/v0.9.5/nvim-linux64.tar.gz \
